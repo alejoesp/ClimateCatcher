@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-image: url(imagen/AdobeStock_84598705-1920x1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+button, input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: all 300ms;
+    outline: none;
+}
+/* Agrega estilos para la clase del botón "Ingresar" */
+.ingresar-button {
+    margin-top: 10px; /* Ajusta la distancia vertical según tu preferencia */
+}
+button:hover, input[type="submit"]:hover {
+    background: #fff;
+    color: #46A2FD;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+.reading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.stats div {
+    margin-bottom: 5px;
+}
+.instruccion-codigo-producto {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 600px; /* o el ancho que prefieras */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instruccion-codigo-producto p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.imagen-codigo-producto img {
+    max-width: 100%; /* La imagen se ajustará al contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    max-height: 120px; /* o la altura que prefieras */
+    border-radius: 5px; /* Opcional: añade bordes redondeados a la imagen */
+}
+.imagen-codigo-producto {
+    text-align: center; /* Centra la imagen si es necesario */
+}
+
