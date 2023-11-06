@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+body {
+    background-image: url(../imagen/cielo.jpg);
+    background-color: #f4f5f7;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 16px;
+}
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas si es necesario */
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    
+}
+.navbar-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.navbar-menu li a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+/* Dashboard contenedor */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;  
+}
+/* Sección de usuarios */
+.usuarios-section {
+    width: 48%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin: 80px;
+    margin-left: 300px;
+}
+.estaciones-section {
+    width: 48%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin-left: 300px;
+}
+.usuario-item, .estacion-item {
+    border: 1px solid #e5e5e5;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 20px; /* Aumenta el relleno */
+    transition: background-color 0.3s, border 0.3s; 
+    margin-bottom: 20px;
+}
+h2 {
+    text-align: left;  /* Alineación a la izquierda */
+    margin-bottom: 25px;  /* Espacio adicional debajo del título */
+    font-size: 24px;  /* Aumento del tamaño de la fuente para destacar */
+    font-weight: bold;  /* Negrita para resaltar más */
+    border-bottom: 2px solid #333;  /* Línea debajo del título para separación visual */
+    padding-bottom: 10px;  /* Espacio entre el título y la línea */
+}
+
+/* Estilo para el contenido del elemento */
+.usuario-item p, .estacion-item p {
+    margin-bottom: 10px;  /* Espacio entre párrafos para mejorar legibilidad */
+    font-size: 18px;  /* Aumento del tamaño de la fuente para facilidad de lectura */
+}
+.usuario-item:hover, .estacion-item:hover {
+    background-color: #e5e5e5; /* Color de fondo al pasar el mouse */
+    border: 1px solid #d0d0d0; /* Cambio en el borde al pasar el mouse */
+}

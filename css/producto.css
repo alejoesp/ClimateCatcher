@@ -1,0 +1,107 @@
+/* Estilos para la sección del producto */
+.climatecatcher-description-1 {
+    padding: 100px;
+    background-color: #f9f9f9; /* Ajuste sutil al color para un aspecto más neutro */
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.075); /* Sombra con mayor difuminado para un efecto más suave */
+}
+.climatecatcher-title-1 {
+    font-size: 28px; /* Incremento sutil para resaltar más el título */
+    text-align: center; /* Centralizar el título para un enfoque más claro */
+    margin-bottom: 28px;
+    color: #242424; /* Oscurecimiento sutil para resaltar el título */
+    font-weight: bold;
+}
+.climatecatcher-subtitle-1 {
+    font-size: 23px; /* Pequeño ajuste para mantener la jerarquía visual */
+    text-align: center; /* Centralización para mantener la consistencia */
+    margin: 30px 0 20px 0; /* Espaciado simétrico */
+    color: #3a3a3a;
+    font-weight: 600;
+}
+.climatecatcher-intro-1, .climatecatcher-text-1 {
+    font-size: 19px; /* Ajuste para mejorar la legibilidad */
+    line-height: 1.65; /* Espacio entre líneas optimizado */
+    color: #585858; /* Ligeramente más oscuro para mantener la legibilidad */
+    text-align: justify; /* Justificar el texto para un aspecto más pulido */
+}
+
+.climatecatcher-components-1 {
+    margin: 30px 0; /* Espaciado simétrico alrededor de la lista */
+    list-style-type: circle; /* Viñetas circulares para diferenciar de los subtítulos */
+    padding-left: 40px; 
+}
+.climatecatcher-components-1 li {
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 18px; /* Ajuste para mantener la coherencia con otros textos */
+}
+.climatecatcher-image-1 {
+    width: 100%;
+    max-width: 480px; /* Aumentar el ancho máximo */
+    display: block;
+    margin: 0 auto 35px auto; /* Mayor espacio debajo para separar de otros contenidos */
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.075);
+}
+/* Estilos para el modal */
+.modal-1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+.modal-content-1 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+.close-button-1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-button-1:hover,
+.close-button-1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Estilos para el anuncio */
+.climatecatcher-announcement-1 {
+    background-color: #d5faff;
+    padding: 20px 5%;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+.climatecatcher-announcement-1 p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+/* Estilos para el botón */
+.btn-anunciar-1 {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-anunciar-1:hover {
+    background-color: #0056b3;
+}
+
