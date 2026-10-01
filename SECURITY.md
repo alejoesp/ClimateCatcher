@@ -1,32 +1,31 @@
-# Seguridad
+# Notas de seguridad
 
-## Credenciales
+## Conexión a la base de datos
 
-Las credenciales de base de datos no deben almacenarse directamente en el repositorio.
+La conexión ya no tiene usuario y contraseña escritos directamente en `conexion.php`.
 
-La rama de portfolio utiliza las siguientes variables de entorno:
+Ahora toma estos valores desde variables de entorno:
 
 - `DB_HOST`
 - `DB_NAME`
 - `DB_USER`
 - `DB_PASSWORD`
 
-El archivo `.env.example` funciona únicamente como referencia y no contiene credenciales reales.
+`.env.example` muestra qué datos hacen falta, pero no contiene credenciales reales.
 
-## Importante sobre credenciales históricas
+## Credenciales antiguas
 
-Este repositorio tuvo credenciales incorporadas directamente al código en una versión anterior. Aunque se eliminen del archivo actual, cualquier credencial publicada previamente debe considerarse comprometida y debe ser reemplazada en el proveedor correspondiente.
+En una versión anterior del repositorio hubo datos de conexión escritos en el código. Aunque ya no estén en la versión actual, una contraseña que estuvo publicada debe darse por expuesta y cambiarse en el hosting o servidor correspondiente.
 
-## Recomendaciones adicionales
+## Pendientes del proyecto original
 
-Para una versión productiva del proyecto se recomienda:
+Si retomara ClimateCatcher para usarlo fuera de un prototipo, revisaría principalmente estos puntos:
 
-- usar `password_hash()` y `password_verify()` para contraseñas;
-- separar el código físico de estación de la contraseña del usuario;
-- utilizar HTTPS;
-- usar POST para el envío de telemetría;
-- implementar tokens de dispositivo revocables;
-- limitar la frecuencia de solicitudes;
-- validar rangos aceptables de sensores;
-- evitar exponer mensajes internos de base de datos;
-- mantener logs y archivos de entorno fuera del repositorio.
+- guardar contraseñas con `password_hash()` y validarlas con `password_verify()`;
+- no usar el mismo dato como código de estación y contraseña;
+- pasar el envío de mediciones a POST;
+- trabajar siempre sobre HTTPS;
+- usar un token distinto para cada dispositivo;
+- validar límites razonables para cada sensor;
+- no mostrar errores internos de MySQL al usuario;
+- mantener logs fuera del directorio público.
