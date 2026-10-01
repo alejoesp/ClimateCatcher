@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+
+error_log.txt
+log.txt
+*.log
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
