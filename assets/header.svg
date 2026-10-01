@@ -1,0 +1,27 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#071421"/>
+    <stop offset=".58" stop-color="#0D2C43"/>
+    <stop offset="1" stop-color="#105361"/>
+  </linearGradient>
+  <linearGradient id="a" x1="900" y1="70" x2="1080" y2="280" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#56D7FF"/>
+    <stop offset="1" stop-color="#70F2CF"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+<g opacity=".1" stroke="#9BE9FF">
+  <path d="M0 60H1200M0 120H1200M0 180H1200M0 240H1200M0 300H1200"/>
+  <path d="M120 0V360M240 0V360M360 0V360M480 0V360M600 0V360M720 0V360M840 0V360M960 0V360M1080 0V360"/>
+</g>
+<text x="82" y="145" fill="white" font-size="62" font-family="Arial, Helvetica, sans-serif" font-weight="800">ClimateCatcher</text>
+<text x="84" y="194" fill="#C2DDE8" font-size="25" font-family="Arial, Helvetica, sans-serif">Estación meteorológica conectada a una aplicación web</text>
+<text x="84" y="244" fill="#75EBD2" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">PHP · MySQL · JavaScript · Chart.js</text>
+<g transform="translate(900 72)">
+  <circle cx="110" cy="105" r="84" stroke="url(#a)" stroke-width="3"/>
+  <path d="M57 123C72 95 88 76 109 61C128 76 145 95 162 123" stroke="url(#a)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M69 137H152" stroke="url(#a)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M88 157C101 165 119 165 132 157" stroke="url(#a)" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>
