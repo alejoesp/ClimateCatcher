@@ -75,7 +75,9 @@ El recorrido es bastante directo:
 - JavaScript
 - Chart.js
 
-## Archivos principales
+
+<details>
+<summary><strong>Ver estructura de archivos</strong></summary>
 
 ```text
 ClimateCatcher/
@@ -101,6 +103,8 @@ ClimateCatcher/
 └── docs/
     └── ARCHITECTURE.md
 ```
+
+</details>
 
 ## Ejecutarlo de forma local
 
