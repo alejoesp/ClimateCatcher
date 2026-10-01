@@ -1,146 +1,116 @@
 <p align="center">
-  <img src="assets/portfolio-banner.svg" alt="ClimateCatcher — IoT Weather Monitoring" width="100%">
+  <img src="assets/portfolio-banner.svg" alt="ClimateCatcher" width="100%">
 </p>
 
 <p align="center">
   <img alt="PHP" src="https://img.shields.io/badge/PHP-Backend-777BB4?style=for-the-badge&logo=php&logoColor=white">
   <img alt="MySQL" src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-Analytics-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white">
+  <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-Gráficos-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white">
 </p>
 
-<p align="center">
-  <strong>IoT · Full Stack · Data Visualization · Environmental Monitoring</strong>
-</p>
+## Qué es ClimateCatcher
 
-<p align="center">
-  <a href="docs/ARCHITECTURE.md">Arquitectura técnica</a> ·
-  <a href="SECURITY.md">Seguridad</a>
-</p>
+ClimateCatcher es un proyecto de **estación meteorológica + aplicación web**.
 
-## Descripción
+La estación toma mediciones del ambiente y las manda al servidor. La web guarda esos registros y permite verlos de una forma más cómoda: valores actuales, mínimos, máximos, promedios, gráficos e historial.
 
-**ClimateCatcher** es un prototipo de sistema meteorológico compuesto por una estación física y una aplicación web. La estación envía mediciones ambientales a un backend desarrollado en PHP; los datos se validan, se almacenan en MySQL y luego pueden consultarse desde un panel web con estadísticas, gráficos, historial y generación de reportes.
+La idea era poder seguir el dato desde que sale de la estación hasta que aparece en pantalla.
 
-El proyecto integra adquisición de datos, persistencia, autenticación, visualización y administración en una misma solución. Fue pensado como una demostración completa del recorrido de la información: desde el dispositivo que mide el ambiente hasta la interfaz donde el usuario interpreta los resultados.
+## Qué mide
 
-## Variables meteorológicas registradas
+| Dato | Unidad |
+| --- | --- |
+| Temperatura | °C |
+| Humedad | % |
+| Luminosidad | % |
+| Presión atmosférica | hPa |
 
-El sistema trabaja con cuatro magnitudes principales:
+## Qué se puede hacer
 
-| Variable | Descripción | Unidad mostrada |
-| --- | --- | --- |
-| Temperatura | Temperatura ambiente registrada por la estación | °C |
-| Humedad | Humedad relativa del ambiente | % |
-| Luminosidad | Nivel de iluminación recibido | % |
-| Presión atmosférica | Presión registrada por el sensor | hPa |
+- recibir datos enviados por una estación;
+- validar el código de la estación;
+- guardar las mediciones en MySQL;
+- registrar usuarios e iniciar sesión;
+- asociar usuarios con estaciones;
+- consultar valores actuales y estadísticas;
+- ver el historial en gráficos con **Chart.js**;
+- filtrar registros por fecha;
+- descargar reportes en PDF;
+- administrar usuarios y estaciones desde un panel separado.
 
-## Funcionalidades principales
-
-- Recepción de datos desde estaciones mediante un endpoint HTTP.
-- Validación de una clave asociada a cada estación.
-- Persistencia de mediciones en una base de datos MySQL.
-- Registro e inicio de sesión de usuarios.
-- Asociación entre usuarios y estaciones meteorológicas.
-- Panel de usuario con valores actuales, mínimos, máximos y promedios.
-- Visualización histórica mediante gráficos con **Chart.js**.
-- Tabla paginada de mediciones.
-- Filtrado y consulta de información por fecha.
-- Generación de reportes descargables en **PDF** mediante FPDF.
-- Panel de administración para consultar usuarios y estaciones.
-- Gestión de sesión y cierre de sesión.
-
-## Arquitectura
+## Cómo funciona
 
 ```mermaid
 flowchart LR
-    A[Estación meteorológica] -->|HTTP + mediciones| B[Endpoint PHP]
-    B --> C{Validación de estación}
-    C -->|Válida| D[(MySQL)]
-    C -->|Inválida| E[Respuesta de error]
-    D --> F[Backend PHP]
-    F --> G[Dashboard del usuario]
-    G --> H[Chart.js]
-    G --> I[Reportes PDF]
-    D --> J[Panel administrador]
+    A[Estación] -->|mediciones| B[datosestacion.php]
+    B --> C{Valida estación}
+    C -->|OK| D[(MySQL)]
+    D --> E[Dashboard]
+    E --> F[Gráficos]
+    E --> G[Reportes PDF]
+    D --> H[Panel admin]
 ```
 
-### Flujo de datos
+El recorrido es bastante directo:
 
-1. La estación obtiene temperatura, humedad, luminosidad y presión.
-2. El dispositivo envía los valores al endpoint `datosestacion.php`.
-3. El backend verifica el identificador de la estación.
-4. `insertardatos.php` registra la medición con fecha y hora.
-5. El dashboard consulta los datos almacenados.
-6. PHP calcula estadísticas y entrega la información a la interfaz.
-7. Chart.js representa las series meteorológicas.
-8. El usuario puede consultar el historial y generar un reporte PDF.
+1. La estación envía temperatura, humedad, luminosidad y presión.
+2. `datosestacion.php` recibe los valores y comprueba la estación.
+3. `insertardatos.php` guarda la medición con fecha y hora.
+4. El dashboard consulta esos datos y calcula estadísticas.
+5. Chart.js los muestra en gráficos.
+6. Si hace falta, se puede generar un reporte PDF.
 
-## Stack tecnológico
+## Tecnologías
 
-### Backend
-- **PHP**: lógica del servidor, sesiones, autenticación, consultas y endpoints.
-- **PDO**: acceso parametrizado a la base de datos.
-- **MySQL**: almacenamiento de usuarios, estaciones y mediciones.
-- **FPDF**: generación de reportes PDF.
+**Backend**
+- PHP
+- PDO
+- MySQL
+- FPDF
 
-### Frontend
-- **HTML5**: estructura de las vistas.
-- **CSS3**: diseño y presentación.
-- **JavaScript**: comportamiento de la interfaz.
-- **Chart.js**: representación gráfica de los datos.
+**Frontend**
+- HTML
+- CSS
+- JavaScript
+- Chart.js
 
-### Conceptos implementados
-- Aplicación web full-stack.
-- Integración dispositivo-servidor.
-- Endpoint de recepción de datos.
-- Persistencia relacional.
-- Consultas preparadas.
-- Sesiones de usuario.
-- Dashboard y visualización de datos.
-- Generación de documentos.
-- Separación entre interfaz de usuario y administración.
-
-## Estructura del proyecto
+## Archivos principales
 
 ```text
 ClimateCatcher/
-├── assets/                 # Recursos de presentación del portfolio
-├── css/                    # Estilos específicos de cada vista
-├── imagen/                 # Recursos gráficos y branding original
-├── conexion.php            # Conexión centralizada a MySQL
-├── datosestacion.php       # Endpoint que recibe las mediciones
-├── insertardatos.php       # Persistencia de datos meteorológicos
-├── dashboard.php           # Panel principal del usuario
+├── assets/                 # Recursos usados en el README
+├── css/                    # Estilos de las distintas vistas
+├── imagen/                 # Imágenes y recursos del proyecto
+├── conexion.php            # Conexión a MySQL
+├── datosestacion.php       # Recibe las mediciones
+├── insertardatos.php       # Guarda los datos
+├── dashboard.php           # Panel del usuario
 ├── dashboard_admin.php     # Panel de administración
-├── generar_reporte.php     # Exportación de datos a PDF
-├── login.php               # Inicio de sesión
-├── login_admin.php         # Acceso administrativo
-├── registro.php            # Registro y asociación de estaciones
-├── logout.php              # Cierre de sesión
-├── producto.php            # Presentación del producto
-├── index.html              # Página principal
-├── scripts.js              # Interacciones del frontend
-├── styles.css              # Estilos globales
-├── .env.example            # Variables necesarias para la conexión
-├── .gitignore              # Archivos excluidos del repositorio
-├── SECURITY.md             # Consideraciones de seguridad
+├── generar_reporte.php     # Genera reportes PDF
+├── login.php
+├── login_admin.php
+├── registro.php
+├── logout.php
+├── producto.php
+├── index.html
+├── scripts.js
+├── styles.css
+├── .env.example
+├── SECURITY.md
 └── docs/
-    └── ARCHITECTURE.md     # Documentación técnica ampliada
+    └── ARCHITECTURE.md
 ```
 
-## Ejecución local
+## Ejecutarlo de forma local
 
-### Requisitos
+Hace falta tener:
 
-- PHP 8.x
-- MySQL o MariaDB
-- Servidor web local, por ejemplo Apache/XAMPP
-- Navegador moderno
+- PHP 8 o superior;
+- MySQL o MariaDB;
+- Apache, XAMPP o un servidor similar.
 
-### Configuración
-
-La versión de portfolio utiliza variables de entorno para evitar credenciales embebidas en el código.
+La conexión a la base de datos usa variables de entorno:
 
 ```bash
 DB_HOST=localhost
@@ -149,52 +119,24 @@ DB_USER=usuario
 DB_PASSWORD=contraseña
 ```
 
-Podés tomar `.env.example` como referencia. El servidor PHP debe exponer esas variables al proceso que ejecuta la aplicación.
+El archivo `.env.example` sirve como referencia para saber qué valores hay que configurar.
 
-Luego:
+## Envío de datos
 
-1. Configurar la base de datos y las tablas requeridas.
-2. Copiar el proyecto dentro del directorio público del servidor.
-3. Configurar las variables de entorno.
-4. Abrir `index.html` desde el servidor local.
-5. Registrar una estación y comenzar a recibir mediciones.
-
-## Endpoint de mediciones
-
-El proyecto recibe datos mediante una solicitud HTTP con los parámetros de la estación y sus lecturas:
+Las mediciones llegan al endpoint con los datos de la estación:
 
 ```text
 datosestacion.php?api_key=ESTACION&humidity=...&temperature=...&luminosity=...&pressure=...
 ```
 
-El backend valida los valores, comprueba la estación y devuelve una respuesta JSON.
-
-> En una evolución de producción sería recomendable migrar este envío a HTTPS + POST con autenticación específica para dispositivos.
+El servidor valida la estación y responde en JSON.
 
 ## Seguridad
 
-La versión de portfolio evita almacenar credenciales de base de datos dentro del repositorio. Los datos sensibles deben administrarse mediante variables de entorno y nunca incorporarse a Git.
+Las credenciales de la base de datos ya no están escritas dentro del código. Para una versión nueva del proyecto también habría que mejorar algunos puntos de la implementación original, sobre todo el manejo de contraseñas y la autenticación de las estaciones.
 
-También es recomendable, para una evolución del prototipo:
+Dejé esos puntos anotados en [SECURITY.md](SECURITY.md).
 
-- almacenar contraseñas de usuario mediante hashes seguros;
-- separar el código de estación de las credenciales de acceso;
-- validar rangos físicos de cada sensor;
-- utilizar HTTPS;
-- limitar solicitudes al endpoint;
-- implementar tokens revocables para dispositivos;
-- registrar errores fuera del repositorio.
+## Documentación
 
-## Estado del proyecto
-
-ClimateCatcher representa un **prototipo funcional full-stack e IoT**. El repositorio conserva la implementación original como parte del proceso de aprendizaje y organiza su documentación y configuración para presentarlo como proyecto de portfolio.
-
-## Documentación técnica
-
-Para una explicación más profunda de componentes, responsabilidades y flujo interno:
-
-[Ver arquitectura técnica](docs/ARCHITECTURE.md)
-
----
-
-**Autor:** [alejoesp](https://github.com/alejoesp)
+En [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) está explicada la estructura interna con un poco más de detalle.
