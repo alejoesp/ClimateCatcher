@@ -1,84 +1,21 @@
-# Arquitectura técnica — ClimateCatcher
+# Cómo funciona ClimateCatcher
 
-## Visión general
+Este archivo explica la parte interna del proyecto y qué hace cada pieza.
 
-ClimateCatcher se compone de dos grandes partes:
+## Recorrido de los datos
 
-1. **Dispositivo meteorológico**, encargado de capturar variables ambientales.
-2. **Aplicación web**, encargada de validar, almacenar, consultar y visualizar las mediciones.
-
-El objetivo del sistema es mantener un flujo completo desde el sensor hasta la visualización final del usuario.
-
-## Componentes
-
-### 1. Ingesta de datos
-
-`datosestacion.php` funciona como endpoint de entrada.
-
-Responsabilidades:
-- recibir identificador de estación;
-- recibir humedad, temperatura, luminosidad y presión;
-- validar tipos de datos;
-- comprobar la existencia de la estación;
-- delegar la persistencia a `insertardatos.php`;
-- devolver una respuesta JSON.
-
-### 2. Persistencia
-
-`insertardatos.php` registra las mediciones utilizando PDO.
-
-La fecha y hora se generan en el servidor con zona horaria de Argentina.
-
-### 3. Autenticación y usuarios
-
-Los archivos principales son:
-- `registro.php`
-- `login.php`
-- `logout.php`
-- `login_admin.php`
-
-Las sesiones PHP mantienen el contexto del usuario autenticado y de la estación asociada.
-
-### 4. Dashboard
-
-`dashboard.php` concentra la experiencia de consulta.
-
-Incluye:
-- últimos valores registrados;
-- mínimos;
-- máximos;
-- promedios;
-- histórico tabular;
-- paginación;
-- selección de fechas;
-- gráficos con Chart.js;
-- acceso a reportes PDF.
-
-### 5. Administración
-
-`dashboard_admin.php` permite consultar:
-- usuarios registrados;
-- estaciones disponibles;
-- relación entre usuarios y estaciones.
-
-### 6. Reportes
-
-`generar_reporte.php` utiliza FPDF para construir un documento descargable con datos históricos.
-
-## Flujo lógico
+El flujo principal es este:
 
 ```text
-Sensores
+Estación
    │
-   ▼
-Dispositivo
-   │
-   │ HTTP
+   │ envía temperatura, humedad,
+   │ luminosidad y presión
    ▼
 datosestacion.php
    │
-   ├── valida estación
-   ├── valida mediciones
+   ├── comprueba la estación
+   ├── valida los valores recibidos
    ▼
 insertardatos.php
    │
@@ -93,41 +30,76 @@ dashboard.php   dashboard_admin.php
    └── FPDF
 ```
 
+La estación manda las mediciones al servidor. `datosestacion.php` recibe esos valores, revisa el código de la estación y, si todo está bien, llama a `insertardatos.php` para guardarlos.
+
+## Archivos que manejan los datos
+
+### `datosestacion.php`
+
+Es el punto de entrada de las mediciones.
+
+Recibe:
+- código de estación;
+- humedad;
+- temperatura;
+- luminosidad;
+- presión.
+
+Después busca la estación en la base de datos y devuelve una respuesta JSON según el resultado.
+
+### `insertardatos.php`
+
+Hace el INSERT de las mediciones y agrega la fecha y hora del servidor.
+
+### `conexion.php`
+
+Centraliza la conexión con MySQL. La conexión usa variables de entorno para no dejar usuario y contraseña dentro del repositorio.
+
+## Usuarios y sesiones
+
+Los archivos principales de esta parte son:
+
+- `registro.php`
+- `login.php`
+- `logout.php`
+- `login_admin.php`
+
+El acceso del usuario se mantiene con sesiones PHP. Al iniciar sesión también se conserva la estación asociada para saber qué datos mostrar en el dashboard.
+
+## Dashboard
+
+`dashboard.php` muestra la información de la estación.
+
+Ahí se calculan y muestran:
+- último valor registrado;
+- mínimos y máximos;
+- promedios;
+- historial;
+- paginación;
+- búsqueda por fecha;
+- gráficos con Chart.js.
+
+También desde esa pantalla se puede generar un reporte PDF.
+
+## Administración
+
+`dashboard_admin.php` es una vista separada para consultar usuarios y estaciones registradas, además de ver qué estación está asociada a cada usuario.
+
+## Reportes
+
+`generar_reporte.php` usa FPDF para armar un PDF con los registros guardados.
+
 ## Base de datos
 
-La implementación utiliza una base relacional con entidades para:
-- usuarios;
-- estaciones;
-- relación usuario-estación;
-- mediciones meteorológicas.
+El proyecto trabaja con tablas para usuarios, estaciones y relaciones entre ambos. Las mediciones se guardan en tablas asociadas al código de cada estación, que es la forma en que estaba resuelto el prototipo original.
 
-La implementación original genera tablas de mediciones asociadas al código de estación.
+## Cosas a tener en cuenta
 
-## Consideraciones de seguridad
+Hay partes que hoy haría de otra manera si retomara el proyecto, especialmente:
+- separar el código de estación de la contraseña del usuario;
+- usar hashes para las contraseñas;
+- enviar la telemetría por POST y HTTPS;
+- validar mejor los rangos de los sensores;
+- sacar por completo los logs del directorio público.
 
-La rama de portfolio elimina credenciales directas del código y las reemplaza por variables de entorno.
-
-Para una versión de producción se recomienda además:
-- `password_hash()` y `password_verify()`;
-- tokens distintos al código físico de estación;
-- HTTPS obligatorio;
-- POST en vez de GET para la ingesta;
-- rate limiting;
-- validación de rangos físicos;
-- logs externos;
-- permisos mínimos para el usuario de MySQL.
-
-## Evolución sugerida
-
-Una evolución técnica natural sería separar la aplicación en capas:
-
-```text
-src/
-├── Controllers/
-├── Services/
-├── Repositories/
-├── Models/
-└── Config/
-```
-
-También sería recomendable una API REST dedicada y un frontend desacoplado.
+No las cambié en esta versión porque forman parte de cómo estaba construido el proyecto original.
