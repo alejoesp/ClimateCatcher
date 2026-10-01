@@ -1,20 +1,21 @@
-# ClimateCatcher
-
 <p align="center">
-  <img src="imagen/logo_texto.jpeg" alt="ClimateCatcher" width="420">
+  <img src="assets/portfolio-banner.svg" alt="ClimateCatcher — IoT Weather Monitoring" width="100%">
 </p>
 
 <p align="center">
-  Plataforma web para adquisición, almacenamiento, visualización y análisis de datos meteorológicos provenientes de una estación física.
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-Backend-777BB4?style=for-the-badge&logo=php&logoColor=white">
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-Analytics-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white">
 </p>
 
 <p align="center">
-  <img alt="PHP" src="https://img.shields.io/badge/PHP-Backend-777BB4?logo=php&logoColor=white">
-  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white">
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?logo=javascript&logoColor=black">
-  <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-Data%20Visualization-FF6384?logo=chartdotjs&logoColor=white">
-  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-Interface-E34F26?logo=html5&logoColor=white">
-  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-Styles-1572B6?logo=css3&logoColor=white">
+  <strong>IoT · Full Stack · Data Visualization · Environmental Monitoring</strong>
+</p>
+
+<p align="center">
+  <a href="docs/ARCHITECTURE.md">Arquitectura técnica</a> ·
+  <a href="SECURITY.md">Seguridad</a>
 </p>
 
 ## Descripción
@@ -104,8 +105,9 @@ flowchart LR
 
 ```text
 ClimateCatcher/
+├── assets/                 # Recursos de presentación del portfolio
 ├── css/                    # Estilos específicos de cada vista
-├── imagen/                 # Recursos gráficos y branding
+├── imagen/                 # Recursos gráficos y branding original
 ├── conexion.php            # Conexión centralizada a MySQL
 ├── datosestacion.php       # Endpoint que recibe las mediciones
 ├── insertardatos.php       # Persistencia de datos meteorológicos
@@ -122,6 +124,7 @@ ClimateCatcher/
 ├── styles.css              # Estilos globales
 ├── .env.example            # Variables necesarias para la conexión
 ├── .gitignore              # Archivos excluidos del repositorio
+├── SECURITY.md             # Consideraciones de seguridad
 └── docs/
     └── ARCHITECTURE.md     # Documentación técnica ampliada
 ```
@@ -184,7 +187,7 @@ También es recomendable, para una evolución del prototipo:
 
 ## Estado del proyecto
 
-ClimateCatcher representa un **prototipo funcional full-stack e IoT**. El repositorio conserva la implementación original como parte del proceso de aprendizaje y esta rama organiza su documentación y configuración para presentarlo como proyecto de portfolio.
+ClimateCatcher representa un **prototipo funcional full-stack e IoT**. El repositorio conserva la implementación original como parte del proceso de aprendizaje y organiza su documentación y configuración para presentarlo como proyecto de portfolio.
 
 ## Documentación técnica
 
