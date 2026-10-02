@@ -9,6 +9,14 @@
   <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-Gráficos-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white">
 </p>
 
+<p align="center">
+  <a href="#qué-es-climatecatcher">Qué es</a> ·
+  <a href="#cómo-funciona">Cómo funciona</a> ·
+  <a href="#ejecutarlo-de-forma-local">Ejecutarlo</a> ·
+  <a href="docs/ARCHITECTURE.md">Arquitectura</a> ·
+  <a href="SECURITY.md">Seguridad</a>
+</p>
+
 ## Qué es ClimateCatcher
 
 ClimateCatcher es un proyecto de **estación meteorológica + aplicación web**.
@@ -125,7 +133,8 @@ DB_PASSWORD=contraseña
 
 El archivo `.env.example` sirve como referencia para saber qué valores hay que configurar.
 
-## Envío de datos
+<details>
+<summary><strong>Ver cómo llegan las mediciones</strong></summary>
 
 Las mediciones llegan al endpoint con los datos de la estación:
 
@@ -134,6 +143,8 @@ datosestacion.php?api_key=ESTACION&humidity=...&temperature=...&luminosity=...&p
 ```
 
 El servidor valida la estación y responde en JSON.
+
+</details>
 
 ## Seguridad
 
