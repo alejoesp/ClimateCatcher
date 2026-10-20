@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <ul class="navbar-menu">
             <li><a href="inicio.html">Inicio</a></li>
-            <!-- Puedes agregar más elementos de navegación aquí -->
         </ul>
     </div>
 </nav>
