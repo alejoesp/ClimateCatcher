@@ -33,9 +33,8 @@ button, input[type="submit"] {
     transition: all 300ms;
     outline: none;
 }
-/* Agrega estilos para la clase del botón "Ingresar" */
 .ingresar-button {
-    margin-top: 10px; /* Ajusta la distancia vertical según tu preferencia */
+    margin-top: 10px;
 }
 button:hover, input[type="submit"]:hover {
     background: #fff;
@@ -70,7 +69,7 @@ h1 {
     background-color: #f9f9f9;
     border-radius: 5px;
     text-align: center;
-    max-width: 600px; /* o el ancho que prefieras */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -81,12 +80,12 @@ h1 {
 }
 
 .imagen-codigo-producto img {
-    max-width: 100%; /* La imagen se ajustará al contenedor */
-    height: auto; /* Mantiene la relación de aspecto de la imagen */
-    max-height: 120px; /* o la altura que prefieras */
-    border-radius: 5px; /* Opcional: añade bordes redondeados a la imagen */
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    border-radius: 5px;
 }
 .imagen-codigo-producto {
-    text-align: center; /* Centra la imagen si es necesario */
+    text-align: center;
 }
 
