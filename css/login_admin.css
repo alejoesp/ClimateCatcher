@@ -3,7 +3,7 @@ body {
     background-image:url(../imagen/cielo.jpg);
     background-size: cover;
     background-position: center;
-    color: #f0f0f0; 
+    color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,10 @@ body {
 }
 
 .navbar {
-    background-color: #FFFFFF;  /* Color de fondo cambiado a blanco */
+    background-color: #FFFFFF;
     padding: 10px 0;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    position: fixed;           /* Posición fija en la parte superior */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -33,11 +33,11 @@ body {
 .navbar-brand {
     font-size: 24px;
     font-weight: bold;
-    color: #000000;            /* Color de texto cambiado a negro */
+    color: #000000;
 }
 
 .navbar-brand a {
-    color: #000000;            /* Color de enlace cambiado a negro */
+    color: #000000;
     text-decoration: none;
 }
 
@@ -50,14 +50,14 @@ body {
 }
 
 .navbar-menu li a {
-    color: #000000;            /* Color de texto cambiado a negro */
+    color: #000000;
     text-decoration: none;
     padding: 5px 10px;
     transition: background-color 0.3s ease;
 }
 
 .navbar-menu li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);  /* Cambio de color al pasar el cursor */
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -103,13 +103,13 @@ input[type="submit"]:hover {
     background-color: #333;
 }
 .error-msg {
-    background-color: rgba(255, 0, 0, 0.7); /* Fondo rojo con transparencia */
-    color: #FFFFFF;                         /* Texto en blanco */
+    background-color: rgba(255, 0, 0, 0.7);
+    color: #FFFFFF;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 20px;                    /* Espaciado debajo del mensaje de error */
+    margin-bottom: 20px;
     text-align: center;
-    width: 80%;                             /* Ancho del mensaje */
-    margin-left: 10%;                       /* Centrado horizontal */
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
 }
