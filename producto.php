@@ -43,8 +43,8 @@
             <h3 class="climatecatcher-subtitle-1">Integración y Funcionalidades</h3>
             <p class="climatecatcher-text-1">Los datos recogidos por los sensores son procesados por el microcontrolador Nordic nRF52840, que también maneja la lógica de la interfaz de usuario en la pantalla TFT. La arquitectura modular del sistema permite una fácil integración con bases de datos y servicios web, facilitando así el almacenamiento, análisis y visualización de datos a largo plazo.</p>
        <section class="climatecatcher-announcement-1">
-            <p>El dispositivo ClimateCatcher-Pro aún no se ha lanzado al mercado, pero estamos ofreciendo una versión de prueba.</p>
-            <button id="signupButton-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=climainn71@gmail.com&su=Solicitud%20de%20versión%20de%20prueba&body=Hola,%20me%20gustaría%20solicitar%20la%20versión%20de%20prueba%20del%20dispositivo%20ClimateCatcher-Pro." target="_blank">Anotate para recibirlo</a></button>
+            <p>ClimateCatcher-Pro forma parte de un prototipo y no se presenta como un producto comercial terminado.</p>
+            <button id="signupButton-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=climainn71@gmail.com&su=Solicitud%20de%20versión%20de%20prueba&body=Hola,%20me%20gustaría%20solicitar%20la%20versión%20de%20prueba%20del%20dispositivo%20ClimateCatcher-Pro." target="_blank">Consultar por el prototipo</a></button>
                 </div>
             </div>
         </section>
