@@ -26,7 +26,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <nav class="navbar">
     <div class="container">
         <div class="navbar-brand">
-            <a href="inicio.html">ClimaInn</a>
+            <a href="index.html">ClimaInn</a>
         </div>
         <ul class="navbar-menu">
             <li><a href="dashboard_admin.php">Inicio</a></li>
