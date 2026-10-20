@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="#">Producto</a></li>
-                        <li><a href="login.php">Iniciar Sesion</a></li>
+                        <li><a href="login.php">Iniciar Sesión</a></li>
                         <li><a href="registro.php">Registrarse</a></li>
                     </ul>
                 </nav>
