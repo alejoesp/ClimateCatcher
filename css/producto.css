@@ -1,50 +1,50 @@
-/* Estilos para la sección del producto */
+
 .climatecatcher-description-1 {
     padding: 100px;
-    background-color: #f9f9f9; /* Ajuste sutil al color para un aspecto más neutro */
+    background-color: #f9f9f9;
     border-radius: 12px;
-    box-shadow: 0 8px 12px rgba(0,0,0,0.075); /* Sombra con mayor difuminado para un efecto más suave */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.075);
 }
 .climatecatcher-title-1 {
-    font-size: 28px; /* Incremento sutil para resaltar más el título */
-    text-align: center; /* Centralizar el título para un enfoque más claro */
+    font-size: 28px;
+    text-align: center;
     margin-bottom: 28px;
-    color: #242424; /* Oscurecimiento sutil para resaltar el título */
+    color: #242424;
     font-weight: bold;
 }
 .climatecatcher-subtitle-1 {
-    font-size: 23px; /* Pequeño ajuste para mantener la jerarquía visual */
-    text-align: center; /* Centralización para mantener la consistencia */
-    margin: 30px 0 20px 0; /* Espaciado simétrico */
+    font-size: 23px;
+    text-align: center;
+    margin: 30px 0 20px 0;
     color: #3a3a3a;
     font-weight: 600;
 }
 .climatecatcher-intro-1, .climatecatcher-text-1 {
-    font-size: 19px; /* Ajuste para mejorar la legibilidad */
-    line-height: 1.65; /* Espacio entre líneas optimizado */
-    color: #585858; /* Ligeramente más oscuro para mantener la legibilidad */
-    text-align: justify; /* Justificar el texto para un aspecto más pulido */
+    font-size: 19px;
+    line-height: 1.65;
+    color: #585858;
+    text-align: justify;
 }
 
 .climatecatcher-components-1 {
-    margin: 30px 0; /* Espaciado simétrico alrededor de la lista */
-    list-style-type: circle; /* Viñetas circulares para diferenciar de los subtítulos */
-    padding-left: 40px; 
+    margin: 30px 0;
+    list-style-type: circle;
+    padding-left: 40px;
 }
 .climatecatcher-components-1 li {
     margin-bottom: 15px;
     font-weight: 500;
-    font-size: 18px; /* Ajuste para mantener la coherencia con otros textos */
+    font-size: 18px;
 }
 .climatecatcher-image-1 {
     width: 100%;
-    max-width: 480px; /* Aumentar el ancho máximo */
+    max-width: 480px;
     display: block;
-    margin: 0 auto 35px auto; /* Mayor espacio debajo para separar de otros contenidos */
+    margin: 0 auto 35px auto;
     border-radius: 12px;
     box-shadow: 0 8px 12px rgba(0,0,0,0.075);
 }
-/* Estilos para el modal */
+
 .modal-1 {
     display: none;
     position: fixed;
@@ -77,7 +77,7 @@
     text-decoration: none;
     cursor: pointer;
 }
-/* Estilos para el anuncio */
+
 .climatecatcher-announcement-1 {
     background-color: #d5faff;
     padding: 20px 5%;
@@ -89,7 +89,7 @@
     font-size: 18px;
     margin: 20px 0;
 }
-/* Estilos para el botón */
+
 .btn-anunciar-1 {
     display: inline-block;
     background-color: #007BFF;
