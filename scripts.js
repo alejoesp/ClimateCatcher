@@ -7,11 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (btnRegistrarse) btnRegistrarse.addEventListener("click", register);
 
     function iniciarSesion() {
-        // Aquí puedes agregar lógica adicional si la necesitas
     }
 
     function register() {
-        // Aquí puedes agregar lógica adicional si la necesitas
     }
 });
 function toggleTooltip(event) {
