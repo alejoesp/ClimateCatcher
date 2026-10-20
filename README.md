@@ -95,6 +95,8 @@ ClimateCatcher/
 
 Para levantarlo localmente hace falta un entorno con PHP, MySQL o MariaDB y un servidor como Apache/XAMPP.
 
+El repositorio conserva el código del prototipo original, pero no incluye un archivo SQL con la estructura completa de la base de datos ni la carpeta de FPDF que espera `generar_reporte.php`. Por eso, para ejecutar todas las funciones desde cero todavía hace falta reconstruir el esquema de la base de datos y agregar esa dependencia.
+
 La conexión a la base de datos se configura mediante variables de entorno:
 
 ```bash
