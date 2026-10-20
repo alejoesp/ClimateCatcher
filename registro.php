@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="producto.php">Producto</a></li>
-                    <li><a href="login.php">Iniciar Sesion</a></li>
+                    <li><a href="login.php">Iniciar Sesión</a></li>
                     <li><a href="registro.php">Registrarse</a></li>
                 </ul>
             </nav>
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
     </div>
 <div class="instruccion-codigo-producto">
-    <p>Para registrarte y registrar tu ClimateCatcher, debes colocar el código de producto como contraseña que se encuentra en uno de los lados del disposiitivo.</p>
+    <p>Para registrarte y registrar tu ClimateCatcher, debes colocar el código de producto como contraseña que se encuentra en uno de los lados del dispositivo.</p>
     <div class="imagen-codigo-producto">
         <img src="imagen/7.PNG" alt="Ejemplo del código de producto">
     </div>
