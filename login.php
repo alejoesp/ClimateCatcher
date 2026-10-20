@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="producto.php">Producto</a></li>
-                <li><a href="login.php">Iniciar Sesion</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
                 <li><a href="registro.php">Registrarse</a></li>
             </ul>
         </nav>
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </header>
     <div class="container">
-        <h1>Iniciar Sesion</h1>
+        <h1>Iniciar Sesión</h1>
         <form action="login.php" method="post">
             <input type="text" name="nombre_usuario" placeholder="Nombre de Usuario" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
