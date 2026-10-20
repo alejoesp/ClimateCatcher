@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <nav class="navbar">
     <div class="container">
         <div class="navbar-brand">
-            <a href="inicio.html">ClimaInn</a>
+            <a href="index.html">ClimaInn</a>
         </div>
         <ul class="navbar-menu">
-            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
         </ul>
     </div>
 </nav>
