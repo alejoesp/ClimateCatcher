@@ -17,15 +17,20 @@ Ahora toma estos valores desde variables de entorno:
 
 En una versión anterior del repositorio hubo datos de conexión escritos en el código. Aunque ya no estén en la versión actual, una contraseña que estuvo publicada debe darse por expuesta y cambiarse en el hosting o servidor correspondiente.
 
-## Pendientes del proyecto original
+## Pendientes del prototipo
 
-Si retomara ClimateCatcher para usarlo fuera de un prototipo, revisaría principalmente estos puntos:
+ClimateCatcher conserva varias decisiones del desarrollo original que no usaría igual en una versión de producción. Antes de publicar una nueva versión revisaría, como mínimo:
 
-- guardar contraseñas con `password_hash()` y validarlas con `password_verify()`;
-- no usar el mismo dato como código de estación y contraseña;
-- pasar el envío de mediciones a POST;
-- trabajar siempre sobre HTTPS;
-- usar un token distinto para cada dispositivo;
-- validar límites razonables para cada sensor;
-- no mostrar errores internos de MySQL al usuario;
-- mantener logs fuera del directorio público.
+- guardar las contraseñas con `password_hash()` y validarlas con `password_verify()`;
+- separar la contraseña del usuario del código de la estación;
+- usar un token propio y revocable para cada dispositivo;
+- recibir la telemetría por HTTPS y POST en lugar de enviar la clave en la URL;
+- validar rangos razonables para temperatura, humedad, presión y luminosidad;
+- validar de forma estricta el código de estación antes de usarlo para construir nombres de tablas;
+- evitar devolver mensajes internos de MySQL desde el endpoint;
+- sacar los archivos de log del directorio público;
+- agregar protección CSRF a las acciones que modifican o eliminan datos;
+- endurecer la configuración de sesión y regenerar el identificador después del inicio de sesión;
+- escapar cualquier dato almacenado antes de imprimirlo en HTML.
+
+El repositorio sirve para mostrar el funcionamiento del prototipo y su evolución. No lo considero listo para exponer directamente a Internet sin resolver primero estos puntos.
