@@ -29,9 +29,9 @@
     </header>
     <main>
         <section class="climatecatcher-description-1">
-            <h2 class="climatecatcher-title-1">ClimateCatcher-Pro: Un Dispositivo Avanzado de Monitorización Ambiental</h2>
-            <p class="climatecatcher-intro-1">El  dispositivo ClimateCatcher-Pro es una solución avanzada para la monitorización de diversas variables ambientales. Este dispositivo de alta precisión está diseñado para proporcionar datos confiables y precisos, y es especialmente adecuado para aplicaciones que requieren una monitorización ambiental robusta.</p>
-            <h3 class="climatecatcher-subtitle-1">Componentes Clave</h3>
+            <h2 class="climatecatcher-title-1">ClimateCatcher-Pro: prototipo de estación meteorológica</h2>
+            <p class="climatecatcher-intro-1">ClimateCatcher-Pro es la parte física del proyecto. Reúne un microcontrolador, una pantalla y sensores para registrar temperatura, humedad, luminosidad y presión atmosférica.</p>
+            <h3 class="climatecatcher-subtitle-1">Componentes</h3>
             <ul class="climatecatcher-components-1">
                 <li><strong>Microcontrolador Nordic nRF52840:</strong> Actúa como la unidad central de procesamiento y es fundamental para la conectividad de red.</li>
                 <li><strong>TFT 3.4" - Pantalla de Visualización:</strong> Muestra métricas recogidas por los sensores en tiempo real.</li>
@@ -40,8 +40,8 @@
                 <li><strong>LPS22HB - Sensor de Presión Atmosférica:</strong> Capaz de medir con gran precisión cambios en la presión del aire.</li>
                 <li><strong>Batería LiPo de 2000mAh a 3.7V:</strong> Con un circuito de gestión de carga, es la solución energética del dispositivo, asegurando una operación continua y estable.</li>
             </ul>
-            <h3 class="climatecatcher-subtitle-1">Integración y Funcionalidades</h3>
-            <p class="climatecatcher-text-1">Los datos recogidos por los sensores son procesados por el microcontrolador Nordic nRF52840, que también maneja la lógica de la interfaz de usuario en la pantalla TFT. La arquitectura modular del sistema permite una fácil integración con bases de datos y servicios web, facilitando así el almacenamiento, análisis y visualización de datos a largo plazo.</p>
+            <h3 class="climatecatcher-subtitle-1">Funcionamiento</h3>
+            <p class="climatecatcher-text-1">El microcontrolador Nordic nRF52840 recibe las lecturas de los sensores y coordina la información mostrada en la pantalla. Esos datos también pueden enviarse al servidor para guardarlos en la base de datos y consultarlos desde la aplicación web.</p>
        <section class="climatecatcher-announcement-1">
             <p>ClimateCatcher-Pro forma parte de un prototipo y no se presenta como un producto comercial terminado.</p>
             <button id="signupButton-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=climainn71@gmail.com&su=Solicitud%20de%20versión%20de%20prueba&body=Hola,%20me%20gustaría%20solicitar%20la%20versión%20de%20prueba%20del%20dispositivo%20ClimateCatcher-Pro." target="_blank">Consultar por el prototipo</a></button>
