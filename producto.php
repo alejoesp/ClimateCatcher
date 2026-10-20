@@ -42,11 +42,10 @@
             </ul>
             <h3 class="climatecatcher-subtitle-1">Funcionamiento</h3>
             <p class="climatecatcher-text-1">El microcontrolador Nordic nRF52840 recibe las lecturas de los sensores y coordina la información mostrada en la pantalla. Esos datos también pueden enviarse al servidor para guardarlos en la base de datos y consultarlos desde la aplicación web.</p>
-       <section class="climatecatcher-announcement-1">
+        </section>
+        <section class="climatecatcher-announcement-1">
             <p>ClimateCatcher-Pro forma parte de un prototipo y no se presenta como un producto comercial terminado.</p>
-            <button id="signupButton-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=climainn71@gmail.com&su=Solicitud%20de%20versión%20de%20prueba&body=Hola,%20me%20gustaría%20solicitar%20la%20versión%20de%20prueba%20del%20dispositivo%20ClimateCatcher-Pro." target="_blank">Consultar por el prototipo</a></button>
-                </div>
-            </div>
+            <button id="signupButton-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=climainn71@gmail.com&su=Solicitud%20de%20versión%20de%20prueba&body=Hola,%20me%20gustaría%20solicitar%20la%20versión%20de%20prueba%20del%20dispositivo%20ClimateCatcher-Pro." target="_blank" rel="noopener noreferrer">Consultar por el prototipo</a></button>
         </section>
     </main>
 </body>
