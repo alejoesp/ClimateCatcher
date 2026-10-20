@@ -53,7 +53,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     ?>
 
-                    <p>Estacion a la que tiene acceso: 
+                    <p>Estación a la que tiene acceso: 
                         <?php if (!empty($stations)): ?>
                             <?php foreach($stations as $station): ?>
                                 <?= htmlspecialchars($station["NombreEstacion"]); ?>
